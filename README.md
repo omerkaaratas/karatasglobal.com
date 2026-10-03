@@ -2,7 +2,7 @@
 
 Static site: index.html, assets/css/styles.css, assets/js/main.js. No build step, no framework, no external requests. Open index.html in a browser to preview.
 
-Status: published to GitHub Pages as a preview. The karatasglobal.com domain and DNS are not connected yet.
+Status: live on GitHub Pages at https://www.karatasglobal.com/
 
 ## Placeholder photography
 
