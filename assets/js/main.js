@@ -1,7 +1,6 @@
-/* KG-WEB-001 — Formspark direct enquiry path; original KG contact email retained.
-   ACTIVATION GATE: A distinct Karatas Global Formspark ID is required.
-   Formspark IDs are public endpoint identifiers, NOT passwords or API secrets.
-   A distinct Karatas Global ID is configured. Never reuse Granite & Lime's ID. */
+/* KG-WEB-001 — Formspark direct enquiry. Email-client fallback retained on errors.
+   Endpoint ID is a public form identifier; no secret API token belongs in this file.
+   Uses a separate Karatas Global form, not the Granite & Lime endpoint. */
 (function () {
 'use strict';
 var EMAIL='omer@karatasglobal.com';
@@ -34,7 +33,7 @@ copyEmail.addEventListener('click',function(){mailFallback(info());});
 form.addEventListener('submit',async function(event){
 event.preventDefault();if(sending)return;if(!errorCheck())return;
 var data=info(),payload={};
-Object.keys(data).forEach(function(key){if(key!=='_gotcha')payload[key]=String(data[key]||'').trim();});
+Object.keys(data).forEach(function(key){if(key.charAt(0)!=='_')payload[key]=String(data[key]||'').trim();});
 payload._gotcha=data._gotcha||'';
 payload._email={subject:subject()};
 status.hidden=true;recovery.hidden=true;
