@@ -16,7 +16,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&toggle.getA
 }
 var modeNote=document.getElementById('contact-mode-note');
 if(endpoint&&modeNote)modeNote.textContent='Your enquiry is submitted securely through our form provider. You will see confirmation if the provider accepts it. No files or confidential drawings, please.';
-var emailRe=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/;
+var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 var forms=document.querySelectorAll('form[data-enquiry]');
 Array.prototype.forEach.call(forms,function(form){
 var sending=false,button=form.querySelector('button[type=submit]'),status=form.querySelector('.form-feedback'),recovery=form.querySelector('.form-recovery'),copyEmail=recovery.querySelector('.recovery-email'),originalLabel=button.innerHTML;
@@ -28,7 +28,7 @@ function message(data){var fieldsForMessage=TYPE==='buyer'?[['name','Name'],['co
 return fieldsForMessage.map(function(entry){var v=String(data[entry[0]]||'').trim();return v?entry[1]+': '+v:'';}).filter(Boolean).join('\n');}
 function mailFallback(data){var url='mailto:'+EMAIL+'?subject='+encodeURIComponent(subject())+'&body='+encodeURIComponent(message(data));window.location.href=url;}
 function showStatus(text,tone){status.hidden=false;status.textContent=text;status.dataset.tone=tone;status.focus({preventScroll:true});}
-function errorCheck(){var input=form.querySelector('input[name=email]');input.setCustomValidity('');var value=input.value.trim().toLowerCase();if(value&&(!emailRe.test(value)||/\\.(com|ie|net|org)\\.\\1$/.test(value)))input.setCustomValidity('Please check your email address, including the ending (for example name@company.ie).');return form.reportValidity();}
+function errorCheck(){var input=form.querySelector('input[name=email]');input.setCustomValidity('');var value=input.value.trim().toLowerCase();if(value&&(!emailRe.test(value)||/\.(com|ie|net|org)\.\1$/.test(value)))input.setCustomValidity('Please check your email address, including the ending (for example name@company.ie).');return form.reportValidity();}
 form.querySelector('input[name=email]').addEventListener('input',function(){this.setCustomValidity('');});
 copyEmail.addEventListener('click',function(){mailFallback(info());});
 form.addEventListener('submit',async function(event){
