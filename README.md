@@ -18,15 +18,19 @@ No framework, build step, analytics, cookies or paid external services are used.
 
 ## Contact forms
 
-**Important:** Both forms build a `mailto:` URL and open the visitor's email application. They do NOT submit to a server, confirm delivery or collect/store leads in the browser/site. The visitor must press Send. The email address already shown on the existing public site is used but **real receipt has not been tested**.
+**KG-WEB-001 PR #3:** Both forms are configured to POST to a **separate Karatas Global Formspark form**, `https://submit-form.com/VPg3Xqson`, using the existing `omer@karatasglobal.com` notification destination, as reported by the founder. They include an `enquiry_type` label (buyer vs supplier), Formspark-compatible `_email.subject`, honeypot, and on-page asynchronous confirmation/error status.
 
-Do not request sensitive files or confidential specifications through this workflow. A real hosted form handler would require a separate privacy, security, cost and founder approval decision.
+With JavaScript enabled, the site sends JSON with `Content-Type` and `Accept: application/json`; a visible acknowledgement is shown only when Formspark responds successfully. Failure preserves form input and offers an email-app fallback. Without JavaScript, a normal HTML POST goes directly to Formspark and redirects to `enquiry-sent.html` or `enquiry-error.html`, with `_append=false` to avoid exposing visitor data in query strings.
+
+**NOT YET END-TO-END VERIFIED:** The form ID and active notification recipient were supplied by the founder, but no live enquiry was submitted and no inbox receipt was confirmed. The code is on a separate PR branch; publishing requires explicit founder release authorisation after validation.
+
+Do not request sensitive files or confidential specifications through this workflow. A separate Karatas Global Formspark workspace/form was created by the founder. The latest draft includes `privacy.html`. Final privacy policy and retention controls remain a founder responsibility.
 
 ## Known release checks
 
 - Founder approval of exact proposed public copy, name, contact channels and actual service capability.
 - Confirm rendered layouts at 375px / 768px / 1366px and keyboard accessibility.
-- Test native email-client opening and actual inbox receipt **only after explicit permission**.
+- Test buyer and partner Formspark submissions end-to-end and verify records plus notifications in **omer@karatasglobal.com**, **only after explicit permission**. Do not send test enquiries without authorisation.
 - Review legal/trading identity and privacy information.
 - Check GitHub Pages settings and HTTPS enforcement; do not change DNS or mail records under this PR.
 - Preserve current production commit for rollback; verify after publishing.
