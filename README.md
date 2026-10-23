@@ -1,28 +1,37 @@
-# Karatas Global — V2 website
+# Karatas Global — KG-WEB-001 (Option B draft)
 
-Static site: index.html, assets/css/styles.css, assets/js/main.js. No build step, no framework, no external requests. Open index.html in a browser to preview.
+A lightweight, dependency-free, founder-led B2B site. Main positioning: **International Business Development & Strategic Sourcing between Ireland and Türkiye.**
 
-Status: live on GitHub Pages at https://www.karatasglobal.com/
+## Review status
 
-## Placeholder photography
+This branch is **NOT published**. It is proposed website content awaiting founder review and explicit release approval. The production site remains driven by the configured GitHub Pages deployment source (verify in Pages settings before any merge).
 
-Every photograph is a temporary free-licence placeholder from Pexels (Pexels licence: free for commercial use, modification allowed, attribution not required). None of them shows Karatas Global stock, a Karatas Global transaction or Granite & Lime work. Each is marked in index.html with a PLACEHOLDER comment.
+## Files
 
-| Slot | File prefix | Source |
-|---|---|---|
-| Hero | hero-yard, hero-yard-mobile | https://www.pexels.com/photo/trucks-parked-at-sunset-in-industrial-lot-35097902/ |
-| What We Do | inspection | https://www.pexels.com/photo/man-in-blue-cap-and-working-uniform-sitting-beside-truck-wheel-and-reading-a-paper-6720537/ |
-| Commercial Vehicles & Trailers | inventory, inventory-mobile | https://www.pexels.com/photo/view-of-parked-trucks-27099094/ |
-| Supporting services | industrial, industrial-wide | https://www.pexels.com/photo/front-load-loader-beside-white-dump-truck-188679/ |
-| Construction & Renovation | renovation | https://www.pexels.com/photo/wooden-floor-and-white-walls-inside-a-house-7587883/ |
+- `index.html` — one-page commercial positioning, buyer/manufacturer journeys, services, sectors, process, founder and enquiry contact.
+- `assets/css/styles.css` — responsive corporate styles, no external fonts/images (aside from the existing KG SVG logo).
+- `assets/js/main.js` — mobile navigation and email-client handoff for the two enquiry forms.
+- `assets/brand/` — existing brand assets retained.
+- `assets/img/` — historical photos retained in repository but **not referenced by the redesigned page**.
 
-The images are built by scripts/build_images.py (run by the GitHub workflow in .github/workflows). Originals are not stored in the repository. Exports are AVIF + WebP at several widths with one JPEG fallback each; all were cropped and lightly desaturated for a consistent grade.
+No framework, build step, analytics, cookies or paid external services are used. Open `index.html` in a browser to preview. Internet access is not required to load the site itself.
 
-Known limits of the placeholders: the hero yard is in Turkey (European tractor units; a haulier's name is on the darkened left-hand truck), and the refrigerated trailers are North American pattern. Replace with original photography when available.
+## Contact forms
 
-## Things to confirm before deployment
+**Important:** Both forms build a `mailto:` URL and open the visitor's email application. They do NOT submit to a server, confirm delivery or collect/store leads in the browser/site. The visitor must press Send. The email address already shown on the existing public site is used but **real receipt has not been tested**.
 
-- Granite & Lime link: Explore Granite & Lime currently points to #contact (marked TEMPORARY LINK in index.html).
-- Open Graph share image (none yet).
-- Legal entity details for the footer.
-- The requirement form opens the visitor's email app or WhatsApp; nothing is stored.
+Do not request sensitive files or confidential specifications through this workflow. A real hosted form handler would require a separate privacy, security, cost and founder approval decision.
+
+## Known release checks
+
+- Founder approval of exact proposed public copy, name, contact channels and actual service capability.
+- Confirm rendered layouts at 375px / 768px / 1366px and keyboard accessibility.
+- Test native email-client opening and actual inbox receipt **only after explicit permission**.
+- Review legal/trading identity and privacy information.
+- Check GitHub Pages settings and HTTPS enforcement; do not change DNS or mail records under this PR.
+- Preserve current production commit for rollback; verify after publishing.
+- Historical vehicle images are no longer displayed but may remain retrievable by their old direct paths until separately removed.
+
+## Prior version
+
+The previous live design emphasized commercial vehicles and included unrelated Granite & Lime content. This draft removes both from the visible page and substitutes abstract CSS graphics and buyer-led messaging.
