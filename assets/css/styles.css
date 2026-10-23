@@ -13,3 +13,21 @@
 @media(max-width:900px){.hero{min-height:0}.hero-content{padding-top:170px;padding-bottom:105px}.hero h1{font-size:clamp(2.9rem,8vw,5rem)}.hero-visual{opacity:.19;right:-45%}.section-title{display:block}.section-title>p{max-width:660px;margin-top:24px}.audience-grid,.industry-grid,.founder-grid,.form-grid{grid-template-columns:1fr}.founder-graphic{min-height:320px}.steps{grid-template-columns:1fr 1fr;gap:35px}.steps h3{margin-top:25px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid nav{grid-column:1/-1}}
 @media(max-width:560px){.header-row{height:66px}.site-nav{top:66px}.brand img{height:37px;max-width:180px}.hero-content{padding-top:135px;padding-bottom:105px}.hero h1{font-size:clamp(2.45rem,11.2vw,4rem)}.hero .eyebrow{font-size:.61rem;letter-spacing:.08em}.hero-actions{flex-direction:column}.hero-actions .btn{justify-content:space-between}.hero-strip .container{gap:8px;flex-wrap:wrap;letter-spacing:0;font-size:.55rem}.audience-card{min-height:0;padding:28px}.audience-card h3{margin-top:55px}.card-icon{right:25px;top:25px}.service-row{grid-template-columns:35px 1fr;gap:15px;padding:30px 0}.service-row>span:last-child{display:none}.sector-grid,.steps,.field-grid{grid-template-columns:1fr}.sector-grid>div{min-height:175px}.founder-graphic{min-height:250px}.founder-graphic span{font-size:7rem}.founder-graphic small{font-size:.53rem}.enquiry-form{padding:25px 20px}.enquiry-form .btn{width:100%;justify-content:space-between}.footer-grid{grid-template-columns:1fr}.footer-grid nav{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* KG-WEB-001 — direct form submission UI; errors never masquerade as success. */
+.spam-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.enquiry-form button[disabled]{opacity:.65;cursor:wait}
+.form-feedback{padding:13px 15px;border:1px solid #91a8b9;color:#eef5f8;font-size:.9rem}
+.form-feedback[data-tone="success"]{border-color:#bdcda7;background:#1c3b36}
+.form-feedback[data-tone="error"]{border-color:#e4ab99;background:#442c31}
+.form-recovery{border:1px solid #bd9190;padding:15px;color:#f4e5e0;font-size:.86rem}
+.form-recovery p{margin-bottom:10px}
+.recovery-email{background:transparent;color:var(--gold);border:0;border-bottom:1px solid var(--gold);padding:0 0 3px;cursor:pointer;font-weight:700}
+.form-notice a{color:var(--gold)}
+.text-page{background:var(--paper)}.text-page main{padding-top:calc(78px + 75px);padding-bottom:90px;max-width:980px}
+.text-page h1{font-size:clamp(2.2rem,5vw,4.2rem);margin:15px 0 30px}
+.text-page h2{font-size:1.6rem;margin:32px 0 12px}
+.text-page p,.text-page li{margin:12px 0;color:var(--muted)}
+.text-page ul{padding-left:20px}.text-page li{list-style:disc}
+.text-page a{color:#735323}
+@media(max-width:560px){.text-page main{padding-top:140px}}
